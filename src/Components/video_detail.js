@@ -8,7 +8,8 @@ if(!video)
 }
 
     const VideoId =   video.id.VideoId;
-    const url =     `https://www.youtube.com/embed/${VideoId}`; //"...." + videoId
+   const url =     `https://www.youtube.com/embed/${VideoId}`; //"...." + videoId 
+//    const url =     "https://www.youtube.com/embed/" + VideoId;//"...." + videoId 
 
     return(
         <div className= "video-detail col-md-8">

@@ -4,14 +4,14 @@ const VideoDetail  = ({video}) =>{
 if(!video)
 {
     return   <div>Loading...</div>;
-
 }
+
     console.log(video);
+    //const VideoId =   video.id.VideoId;
     const VideoId =   video.id.videoId;
-    //Write videoId instead of VideoId;
-    console.log(VideoId);
-    const url =     `https://www.youtube.com/embed/${VideoId}`; //"...." + videoId
-    console.log(url);
+
+   const url =     `https://www.youtube.com/embed/${VideoId}`; //"...." + videoId
+//    const url =     "https://www.youtube.com/embed/" + VideoId;//"...." + videoId
 
     return(
         <div className= "video-detail col-md-8">

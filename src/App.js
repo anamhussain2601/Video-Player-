@@ -15,16 +15,23 @@ class App extends Component {
     this.state = { videos: [] };
     YTSearch({ key: API_KEY, term: "C Programming" }, videos => {
       // console.log(data);
-      this.setState({ videos }); //equivalent to    this.setState({videos : videos })
+      this.setState(
+        {
+         videos :  videos ,
+        selectedVideo : videos[0]
+    }); //equivalent to    this.setState({videos : videos })
     });
   }
 
   render() {
     return (
       <div className="App">
-        <SearchBar />
-        <VideoDetail video = {this.state.videos[0]} />
-        <VideoList videos={this.state.videos} />
+        <SearchBar onSearchTermChange = {term =>  this.videoSearch(term)} />
+        {/* <VideoDetail video = {this.state.videos[0]}/> */}
+        <VideoDetail video = {this.state.selectedVideo} />
+        <VideoList
+          onVideoSelect = {selectedVideo => this.setState({selectedVideo})}   //onvideoselect is passed as a property to the video
+        videos={this.state.videos} />
       </div>
     );
   }

@@ -1,9 +1,10 @@
 import React from 'react';
+//import custom css file here means add a new css file
 
 const VideoDetail  = ({video}) =>{
 if(!video)
 {
-    return   <div>Loading...</div>;
+    return   <div className="loading">Loading...</div>;
 }
 
     console.log(video);
@@ -20,7 +21,8 @@ if(!video)
             </div>
 
             <div className = "details">
-                <div>{video.snippet.title}</div>
+            {/* apply css in tile to increase the font size and style margin padding */}
+                <div className = "detailFont">{video.snippet.title}</div>
                 <div>{video.snippet.heading}</div>
 
             </div>
